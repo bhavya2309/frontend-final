@@ -13,7 +13,7 @@ export const Navbar = ({ onSearchResults, onAddressRetrieved }) => {
 
   const handleSearch = async (query) => {
     try {
-      const response = await fetch(`http://localhost:3000/search?q=${query}`);
+      const response = await fetch(`${import.meta.env.VITE_ORDER_SEARCH}${query}`);;
       const results = await response.json();
       setSearchResults(results);
       onSearchResults(results);
